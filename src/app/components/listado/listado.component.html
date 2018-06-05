@@ -1,0 +1,67 @@
+<div class="container">
+
+  <!-- CAJA PARA MOSTRAR LOS ERRORES -->
+  <app-caja-mensajes *ngIf="mostrarError()" [errores]="mensajeError()"></app-caja-mensajes>
+
+  <!-- CONTENEDOR CON EL BUSCARDOR Y EL LISTADO -->
+  <div *ngIf="!mostrarError()">
+
+    <div class="row">
+      <div class="col-12">
+        <h1>Brastlewark</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <app-caja-busqueda
+          [mostrarReset]="mostrarReset"
+          [placeholder]="placeHolder"
+          (buscar)="iniciarBusqueda($event)">
+        </app-caja-busqueda>
+      </div>
+    </div>
+
+    <div id="fichaGnomo">
+      <app-ficha-gnomo
+        #fichaGnomo
+        *ngIf="mostrarFichaGnomo"
+        [gnomo]="gnomoFicha"
+        (cerrar)="cerrarFicha()">
+      </app-ficha-gnomo>
+    </div>
+
+    <app-tabla-listado
+      *ngIf="totalRegistros"
+      [columnas]="columnasListado"
+      [datos]="listado"
+      [campoOrden]="campoOrden"
+      [titulo]="tituloTabla"
+      [acciones]="accionesListado"
+      (ejecutar)="mostrarFicha($event)"
+      tipoOrden="ASC">
+    </app-tabla-listado>
+
+    <div class="row"
+      *ngIf="totalRegistros">
+      <div class="col-12">
+        <ngb-pagination
+          class="d-flex justify-content-center"
+          [collectionSize]="totalRegistros"
+          [(page)]="pagina"
+          size="sm"
+          [maxSize]="numeroPaginas"
+          [ellipses]="paginacionElipse"
+          [boundaryLinks]="paginacionInicioFin"
+          (pageChange)="cambiaPagina($event)">
+        </ngb-pagination>
+      </div>
+    </div>
+
+    <!-- CAJA PARA MOSTRAR CUANDO LA BUSQUEDA NO DA RESULTADOS -->
+    <app-caja-mensajes *ngIf="mostrarNoResultados()" [errores]="mensajeError()"></app-caja-mensajes>
+
+  </div>
+
+</div>
+

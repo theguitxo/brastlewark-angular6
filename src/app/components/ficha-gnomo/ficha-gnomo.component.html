@@ -1,0 +1,110 @@
+<div class="row m-1 p-2 border border-info rounded rounded-2">
+  <div class="col-12">
+
+    <!-- CABECERA: NOMBRE Y BOTÓN CERRAR -->
+    <div class="row d-flex flex-md-row-reverse ">
+      <div class="col-12 col-md-2 text-right">
+        <button type="button" class="btn btn-outline-primary btn-sm" (click)="cerrar()">
+          Close
+        </button>
+      </div>
+      <div class="col-12 col-md-10">
+        <h2>{{gnomo.name}}</h2>
+      </div>
+    </div>
+
+    <!-- CUERPO: DATOS GNOMO -->
+    <div class="row">
+
+      <!-- IMAGEN -->
+      <div class="col-12 col-md-3">
+        <img
+          class="img-fluid rounded d-block mx-auto w-100"
+          [src]="gnomo.thumbnail">
+      </div>
+
+      <!-- DATOS -->
+      <div class="col-12 col-md-9 mt-2">
+
+        <!-- EDAD -->
+        <div class="row mb-2">
+          <div class="col-8 font-weight-bold">Age (in years):</div>
+          <div class="col-4 text-right">{{gnomo.age|number:'.0-0'}}</div>
+        </div>
+
+        <!-- ALTURA -->
+        <div class="row mb-2">
+          <div class="col-8 font-weight-bold">Height (in cm):</div>
+          <div class="col-4 text-right">{{gnomo.height|number:'.2-2':'es'}}</div>
+        </div>
+
+        <!-- PESO -->
+        <div class="row mb-2">
+          <div class="col-8 font-weight-bold">Weight (in kg):</div>
+          <div class="col-4 text-right">{{gnomo.weight|number:'.2-2':'es'}}</div>
+        </div>
+
+        <!-- PROFESIONES -->
+        <div class="row">
+          <div class="col-12 font-weight-bold">Professions:</div>
+        </div>
+        <div class="row">
+          <div class="col-12" *ngIf="!gnomo.professions.length">
+            This gnome hasn't professions
+          </div>
+          <div class="col-12" *ngIf="gnomo.professions.length">
+            <ul class="p-0">
+              <li
+                *ngFor="let profesion of gnomo.professions"
+                class="mx-1 badge badge-primary badge-pill">
+                {{profesion}}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- AMIGOS -->
+        <div class="row">
+          <div class="col-12 font-weight-bold">
+            Friends <small class="font-weight-normal">(You can click over each friend to watch their information)</small>:
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" *ngIf="!gnomo.friends.length">
+            This gnome hasn't friends
+          </div>
+          <div class="col-12" *ngIf="gnomo.friends.length">
+            <ul class="p-0">
+              <li
+                *ngFor="let friend of gnomo.friends"
+                class="amigo mx-1 badge badge-primary badge-pill"
+                (click)="verAmigo(friend)">
+                {{friend}}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTÓN ATRAS HISTORIAL AMIGOS -->
+    <div
+      class="row d-flex align-items-center"
+      *ngIf="mostrarBack()">
+      <div class="col-8 text-right">
+        You can return to the last gnome had seen clicking in these back button
+      </div>
+      <div class="col-4 text-left">
+        <button
+          type="button"
+          class="btn btn-primary btn-small"
+          (click)="amigoBack()">
+          <i class="far fa-hand-point-left"></i>Back
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

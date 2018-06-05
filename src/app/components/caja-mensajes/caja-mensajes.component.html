@@ -1,0 +1,30 @@
+<div *ngIf="hayErrores()" class="row">
+
+  <div class="col" *ngIf="erroresEsTexto()">
+
+    <div class="alert alert-danger" role="alert">
+      {{errores}}
+    </div>
+
+  </div>
+
+  <div class="col" *ngIf="erroresEsArray()">
+
+    <div *ngFor="let item of getErrores()" class="alert alert-danger" role="alert">
+      {{item}}
+    </div>
+
+  </div>
+
+</div>
+
+<!--Sólo usado en caso de mostrar mensajes de confirmación-->
+<!--
+<div *ngIf="!hayErrores()" class="row">
+  <div class="col-12">
+    <div class="alert alert-success" role="alert">
+      Los datos se han guardado correctamente
+    </div>
+  </div>
+</div>
+-->

@@ -1,0 +1,27 @@
+.card {
+  width: auto;
+  img {
+    width: 50%;
+  }
+}
+
+table {
+  max-width: 50%;
+  th {
+    vertical-align: top;
+  }
+  td {
+    width: 50%;
+  }
+}
+
+.profesiones, .amigos {
+  ul {
+    list-style: none;
+    li {
+      padding: 0 .5em;
+      display: inline !important;
+    }
+  }
+}
+
