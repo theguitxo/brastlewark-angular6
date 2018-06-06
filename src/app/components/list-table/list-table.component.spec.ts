@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CajaMensajesComponent } from './caja-mensajes.component';
+import { ListTableComponent } from './list-table.component';
 
-describe('CajaMensajesComponent', () => {
-  let component: CajaMensajesComponent;
-  let fixture: ComponentFixture<CajaMensajesComponent>;
+describe('ListTableComponent', () => {
+  let component: ListTableComponent;
+  let fixture: ComponentFixture<ListTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CajaMensajesComponent ]
+      declarations: [ListTableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CajaMensajesComponent);
+    fixture = TestBed.createComponent(ListTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
