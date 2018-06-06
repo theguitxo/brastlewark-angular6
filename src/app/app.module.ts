@@ -25,21 +25,21 @@ registerLocaleData(localeEs, 'es');
 import { OrderByPipe } from './pipes/order.pipe';
 
 // COMPONENTES
-import { ListadoComponent } from './components/listado/listado.component';
-import { CajaMensajesComponent } from './components/caja-mensajes/caja-mensajes.component';
-import { TablaListadoComponent } from './components/tabla-listado/tabla-listado.component';
-import { CajaBusquedaComponent } from './components/caja-busqueda/caja-busqueda.component';
-import { FichaGnomoComponent } from './components/ficha-gnomo/ficha-gnomo.component';
+import { ListComponent } from './components/list/list.component';
+import { MessageBoxComponent } from './components/message-box/message-box.component';
+import { ListTableComponent } from './components/list-table/list-table.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { GnomeInfoComponent } from './components/gnome-info/gnome-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoComponent,
-    CajaMensajesComponent,
+    ListComponent,
+    MessageBoxComponent,
     OrderByPipe,
-    TablaListadoComponent,
-    CajaBusquedaComponent,
-    FichaGnomoComponent
+    ListTableComponent,
+    SearchBoxComponent,
+    GnomeInfoComponent
   ],
   imports: [
     BrowserModule,
