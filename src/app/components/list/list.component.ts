@@ -6,11 +6,11 @@ import { Gnome } from '../../interfaces/gnome';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html',
-  styleUrls: ['./listado.component.scss']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
-export class ListadoComponent implements OnInit, DoCheck {
+export class ListComponent implements OnInit, DoCheck {
 
   cadenaBuscar: string = '';
   listado: Array<Gnome> = Array();
@@ -126,6 +126,9 @@ export class ListadoComponent implements OnInit, DoCheck {
    * @param texto: texto que se usará como criterio de busqueda
    */
   iniciarBusqueda(texto: string): void {
+
+    this.mostrarFichaGnomo = false;
+    this.gnomoFicha = null;
 
     this.cadenaBuscar = texto;
     this.mostrarReset = false;

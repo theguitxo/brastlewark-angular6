@@ -1,7 +1,7 @@
 <div class="container">
 
   <!-- CAJA PARA MOSTRAR LOS ERRORES -->
-  <app-caja-mensajes *ngIf="mostrarError()" [errores]="mensajeError()"></app-caja-mensajes>
+  <app-message-box *ngIf="mostrarError()" [errors]="mensajeError()"></app-message-box>
 
   <!-- CONTENEDOR CON EL BUSCARDOR Y EL LISTADO -->
   <div *ngIf="!mostrarError()">
@@ -14,33 +14,32 @@
 
     <div class="row">
       <div class="col-12">
-        <app-caja-busqueda
-          [mostrarReset]="mostrarReset"
+        <app-search-box
+          [showReset]="mostrarReset"
           [placeholder]="placeHolder"
           (buscar)="iniciarBusqueda($event)">
-        </app-caja-busqueda>
+        </app-search-box>
       </div>
     </div>
 
     <div id="fichaGnomo">
-      <app-ficha-gnomo
-        #fichaGnomo
+      <app-gnome-info
         *ngIf="mostrarFichaGnomo"
-        [gnomo]="gnomoFicha"
-        (cerrar)="cerrarFicha()">
-      </app-ficha-gnomo>
+        [gnome]="gnomoFicha"
+        (close)="cerrarFicha()">
+      </app-gnome-info>
     </div>
 
-    <app-tabla-listado
+    <app-list-table
       *ngIf="totalRegistros"
-      [columnas]="columnasListado"
-      [datos]="listado"
-      [campoOrden]="campoOrden"
-      [titulo]="tituloTabla"
-      [acciones]="accionesListado"
-      (ejecutar)="mostrarFicha($event)"
-      tipoOrden="ASC">
-    </app-tabla-listado>
+      [columns]="columnasListado"
+      [data]="listado"
+      [orderColumn]="campoOrden"
+      [title]="tituloTabla"
+      [actions]="accionesListado"
+      (execute)="mostrarFicha($event)"
+      orderType="ASC">
+    </app-list-table>
 
     <div class="row"
       *ngIf="totalRegistros">
@@ -59,7 +58,7 @@
     </div>
 
     <!-- CAJA PARA MOSTRAR CUANDO LA BUSQUEDA NO DA RESULTADOS -->
-    <app-caja-mensajes *ngIf="mostrarNoResultados()" [errores]="mensajeError()"></app-caja-mensajes>
+    <app-message-box *ngIf="mostrarNoResultados()" [errors]="mensajeError()"></app-message-box>
 
   </div>
 
