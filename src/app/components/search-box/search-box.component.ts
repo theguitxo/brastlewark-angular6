@@ -2,16 +2,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-caja-busqueda',
-  templateUrl: './caja-busqueda.component.html',
-  styleUrls: ['./caja-busqueda.component.scss']
+  selector: 'app-search-box',
+  templateUrl: './search-box.component.html',
+  styleUrls: ['./search-box.component.scss']
 })
-export class CajaBusquedaComponent implements OnInit {
+export class SearchBoxComponent implements OnInit {
 
   public textoBusqueda: string;
   public error: boolean;
 
-  @Input('mostrarReset') mostrarReset: boolean = false;
+  @Input('showReset') mostrarReset: boolean = false;
   @Input('placeholder') placeholder: string = '';
   @Output() buscar: EventEmitter<string> = new EventEmitter<string>();
 
