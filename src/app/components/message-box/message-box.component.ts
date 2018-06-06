@@ -2,13 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
-  selector: 'app-caja-mensajes',
-  templateUrl: './caja-mensajes.component.html',
-  styleUrls: ['./caja-mensajes.component.scss']
+  selector: 'app-message-box',
+  templateUrl: './message-box.component.html',
+  styleUrls: ['./message-box.component.scss']
 })
-export class CajaMensajesComponent implements OnInit {
+export class MessageBoxComponent implements OnInit {
 
-  @Input("errores") errores: any;
+  @Input("errors") errores: any;
 
   constructor(private utils:UtilsService) { }
 

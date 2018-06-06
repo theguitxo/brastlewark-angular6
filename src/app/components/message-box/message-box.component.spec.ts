@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FichaGnomoComponent } from './ficha-gnomo.component';
+import { MessageBoxComponent } from './message-box.component';
 
-describe('FichaGnomoComponent', () => {
-  let component: FichaGnomoComponent;
-  let fixture: ComponentFixture<FichaGnomoComponent>;
+describe('MessageBoxComponent', () => {
+  let component: MessageBoxComponent;
+  let fixture: ComponentFixture<MessageBoxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FichaGnomoComponent ]
+      declarations: [MessageBoxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FichaGnomoComponent);
+    fixture = TestBed.createComponent(MessageBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
