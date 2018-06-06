@@ -237,19 +237,29 @@ export class ListComponent implements OnInit, DoCheck {
    */
   mostrarFicha(gnomo: Gnome): void {
 
-    this.gnomoFicha = gnomo;
-    this.mostrarFichaGnomo = true;
+    this.mostrarFichaGnomo = false;
 
-    // retrasamos un poco (un clico de digest) el movimiento del scroll
-    // para que la ficha ya exista en el DOM y el movimiento sea correcto
-    // si no, al no 'existir' todavía la ficha, el movimiento se ve brusco.
+    // retrasamos la vista de la ficha al siguiente ciclo de digest
+    // para que se ejecute el evento ngAfterContentInit de la ficha de gnomo
     setTimeout(() => {
-      const config: ScrollToConfigOptions = {
-        target: 'fichaGnomo'
-      };
 
-      this.scrollToService.scrollTo(config);
-    }, 0);
+      this.gnomoFicha = gnomo;
+      this.mostrarFichaGnomo = true;
+
+      // retrasamos un poco (un clico de digest) el movimiento del scroll
+      // para que la ficha ya exista en el DOM y el movimiento sea correcto
+      // si no, al no 'existir' todavía la ficha, el movimiento se ve brusco.
+      setTimeout(() => {
+        const config: ScrollToConfigOptions = {
+          target: 'fichaGnomo'
+        };
+
+        this.scrollToService.scrollTo(config);
+      }, 5);
+
+    },0);
+
+
 
   }
 

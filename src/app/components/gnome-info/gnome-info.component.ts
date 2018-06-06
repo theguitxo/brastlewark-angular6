@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterContentInit } from '@angular/core';
 import { Gnome } from '../../interfaces/gnome';
 import { UtilsService } from '../../services/utils.service';
 import { GnomesService } from '../../services/gnomes.service';
@@ -8,7 +8,7 @@ import { GnomesService } from '../../services/gnomes.service';
   templateUrl: './gnome-info.component.html',
   styleUrls: ['./gnome-info.component.scss']
 })
-export class GnomeInfoComponent implements OnInit {
+export class GnomeInfoComponent implements AfterContentInit {
 
   @Output('close') cerrarFicha: EventEmitter<any> = new EventEmitter<any>();
   @Input('gnome') gnomo: Gnome;
@@ -18,7 +18,7 @@ export class GnomeInfoComponent implements OnInit {
   constructor(private utils:UtilsService,
               private gnomes:GnomesService) { }
 
-  ngOnInit() {
+  ngAfterContentInit() {
     this.gnomosVistos = Array();
   }
 
