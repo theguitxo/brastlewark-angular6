@@ -4,14 +4,14 @@ import { UtilsService } from '../../services/utils.service';
 import { GnomesService } from '../../services/gnomes.service';
 
 @Component({
-  selector: 'app-ficha-gnomo',
-  templateUrl: './ficha-gnomo.component.html',
-  styleUrls: ['./ficha-gnomo.component.scss']
+  selector: 'app-gnome-info',
+  templateUrl: './gnome-info.component.html',
+  styleUrls: ['./gnome-info.component.scss']
 })
-export class FichaGnomoComponent implements OnInit {
+export class GnomeInfoComponent implements OnInit {
 
-  @Output('cerrar') cerrarFicha: EventEmitter<any> = new EventEmitter<any>();
-  @Input('gnomo') gnomo: Gnome;
+  @Output('close') cerrarFicha: EventEmitter<any> = new EventEmitter<any>();
+  @Input('gnome') gnomo: Gnome;
 
   private gnomosVistos: Array<number>;
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CajaBusquedaComponent } from './caja-busqueda.component';
+import { GnomeInfoComponent } from './gnome-info.component';
 
-describe('CajaBusquedaComponent', () => {
-  let component: CajaBusquedaComponent;
-  let fixture: ComponentFixture<CajaBusquedaComponent>;
+describe('GnomeInfoComponent', () => {
+  let component: GnomeInfoComponent;
+  let fixture: ComponentFixture<GnomeInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CajaBusquedaComponent ]
+      declarations: [GnomeInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CajaBusquedaComponent);
+    fixture = TestBed.createComponent(GnomeInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
