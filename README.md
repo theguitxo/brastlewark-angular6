@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 You can see a demo of this app on the next url:
 
-(https://theguitxo.github.io/brastlewark-angular6/)[https://theguitxo.github.io/brastlewark-angular6/]
+[https://theguitxo.github.io/brastlewark-angular6/](https://theguitxo.github.io/brastlewark-angular6/)
